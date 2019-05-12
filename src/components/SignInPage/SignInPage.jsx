@@ -11,7 +11,7 @@ const SignInPage = ({ location }) => {
     fakeAuth.signIn(() => setRedirectToReferrer(true));
   };
 
-  if (redirectToReferrer === true) {
+  if (redirectToReferrer === true || fakeAuth.isAuthenticated === true) {
     return <Redirect to={referrer} />;
   }
 
